@@ -27,7 +27,13 @@ const checkEndGame = () => {
   if(disabledCards.length === 12){
 
     clearInterval(this.loop);
-    alert(`Parabéns, ${spanPlayer.innerHTML}!. Seu tempo foi ${timer.innerHTML} Segundos`);
+    let tt = timer.innerHTML;
+    localStorage.setItem('timer', tt);
+
+    setTimeout(() => {
+      window.location = 'pos-game.html'
+    }, 1000);
+
   }
 }
 
